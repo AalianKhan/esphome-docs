@@ -98,14 +98,6 @@ Configuration options:
 - **level** (*Optional*, percentage, :ref:`templatable <config-templatable>`): The target level.
   Range is from -100% to 100% (-1.0 to 1.0).
 
-.. note::
-
-    This action can also be expressed as a :ref:`lambda <config-lambda>`:
-
-    .. code-block:: cpp
-
-        id(my_servo).write(1.0);
-
 .. _servo-ha-config:
 
 Home Assistant Configuration
@@ -158,6 +150,16 @@ be able to control the servo from the frontend.
         id: my_servo
 
 
+lambda calls
+------------
+From :ref:`lambdas <config-lambda>`, you can call methods on servo motors to do some
+advanced stuff (see the full API Reference for more info).
+
+- ``write``: Set the target level of the servo (see ).
+
+    .. code-block:: cpp
+        // Moves servo forward at 100%
+        id(my_servo).write(1.0);
 See Also
 --------
 
